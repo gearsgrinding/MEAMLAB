@@ -8,14 +8,21 @@ void setup() {
 }
 
 void loop() {
-  word AXRaw;
-  word AYRaw;
-  word AZRaw;
+  float AXRaw;
+  float AYRaw;
+  float AZRaw;
 
   AXRaw = analogRead(XPin);    
   AYRaw = analogRead(YPin);
   AZRaw = analogRead(ZPin);
   
+   AXRaw = AXRaw-324.0;    
+   AYRaw = AYRaw-324.0;
+   AZRaw = AZRaw-327.0;
+   
+   AXRaw = AXRaw/12*32;
+   AYRaw = AYRaw/12*32;  
+   AZRaw = AZRaw/12*32;  
   Serial.print(AXRaw);
   Serial.print(", ");
   Serial.print(AYRaw);
